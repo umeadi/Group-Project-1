@@ -1,1 +1,110 @@
-console.log ("Group Project 1")
+console.log ("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi");
+
+
+// ***             Jon code here         ***
+// Twitter API
+// var twitterApiKey = "..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ***              Tez code here        ***
+// Vectorspace API
+// var vsApiKey = "..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ***              Marlon code here            ***
+// Coinmarketcap
+// var cmkApiKey = "..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
