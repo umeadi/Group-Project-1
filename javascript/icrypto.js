@@ -34,8 +34,26 @@ console.log ("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi
 
 
 // ***              Tez code here        ***
-// Vectorspace API
-// var vsApiKey = "..."
+// CryptoControl API
+var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7"
+var cryptoCntrlUrl= "https://cryptocontrol.io/api/v1/public/news/coin/bitcoin?key="+cryptoCntrlApi_key
+
+    
+
+    $.ajax({
+        url: cryptoCntrlUrl,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+        var coinName= response[0].coins[1].name
+        var coinSymbol= response[0].coins[1].tradingSymbol
+        var newsTitle = response[0].title
+        var similiarArticles=response[0].similarArticles[0]
+        console.log(coinName)
+        console.log(coinSymbol)
+        console.log(newsTitle)
+        console.log(similiarArticles)
+    });
 
 
 
