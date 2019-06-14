@@ -83,20 +83,22 @@ var cryptoCntrlUrl= "https://cryptocontrol.io/api/v1/public/news/coin/bitcoin?ke
 
 
 // ***              Marlon code here            ***
-// Coinmarketcap
+// CoinAPI
 // var cmkApiKey = "..."
 
-var cmkUrl ="https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=1"
-var cmkKey ="d8dea55a-8f6d-4cc5-8e53-b204e14c7e57"
+var coinApiUrl ="https://rest.coinapi.io/v1/exchangerate/BTC/"
+var coinApiKey ="14225887-81E7-4652-97A8-B4463485B47D"
 
 $.ajax({
     beforeSend: function(xhrObj){
-        xhrObj.setRequestHeader("Accept","application/json");
-        xhrObj.setRequestHeader("X-CMC_PRO_API_KEY","d8dea55a-8f6d-4cc5-8e53-b204e14c7e5");
-        xhrObj.setRequestHeader("Access-Control-Allow-Origin","*")
-},
-    url: cmkUrl,
-    method: "GET"
+     xhrObj.setRequestHeader("Accept","application/json");
+     xhrObj.setRequestHeader("X-CoinAPI-Key","14225887-81E7-4652-97A8-B4463485B47D");
+ xhrObj.setRequestHeader("Access-Control-Allow-Origin","*")
+ },
+    url: coinApiUrl,
+    method: "GET",
+    // header: "X-CoinAPI-Key: 14225887-81E7-4652-97A8-B4463485B47D"
+
 }).then(function(response) {
     console.log(response)
 
