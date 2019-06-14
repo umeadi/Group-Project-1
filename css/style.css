@@ -1,3 +1,12 @@
 li {
     color: rgb(206, 158, 158);
 }
+
+body {
+    background-image : url("../images/bitcoin-1813503_1920.jpg")
+}
+
+.jumbotron-fluid {
+    background-image : url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg")
+    color: rgb(206, 158, 158);
+}
