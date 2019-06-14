@@ -57,9 +57,10 @@ function usersNews() {
         var coinSymbol = response[0].coins[1].tradingSymbol
         var newsTitle = response[0].title
         var similiarArticles = response[0].similarArticles[0]
+        var storyUrl= response[0].url
         console.log(coinName)
         console.log(coinSymbol)
-        console.log(newsTitle)
+        console.log("News Title----"+newsTitle)
         console.log(similiarArticles)
     });
     $("#userInput").val("")
