@@ -1,58 +1,58 @@
-
-
 body {
-    background-image : url("../images/bitcoin-1813503_1920.jpg")
+  background-image: url("../images/bitcoin-1813503_1920.jpg");
+  margin-top: 20px;
 }
 
 .jumbotron-fluid {
-    background-image : url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg")
-   
+  background-image: url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg");
 }
 
-h1, p {
-    color: darkgoldenrod;
+h1,
+p {
+  color: darkgoldenrod;
 }
 
 #box1 {
-    background-color: rgb(19, 17, 17);
-    color: white;
-    height: 360px; 
-    width: 540px;
-    border: 1px solid gray;
-    
+  background-color: rgb(19, 17, 17);
+  color: white;
+  height: 360px;
+  width: 540px;
+  border: 1px solid gray;
 }
 
 #box2 {
-    background-color:rgb(19, 17, 17);
-    color: white;
-    height: 360px; 
-    width: 540px;
-    border: 1px solid gray;
+  background-color: rgb(19, 17, 17);
+  color: white;
+  height: 360px;
+  width: 540px;
+  border: 1px solid gray;
 }
 
-hr { 
-    display: block;
-    margin-before: 0.5em;
-    margin-after: 0.5em;
-    margin-start: auto;
-    margin-end: auto;
-    overflow: hidden;
-    border-style: inset;
-    border-width: 1px;
-    border-color: gray;
+hr {
+  display: block;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+  border-color: gray;
 }
 
 .card-title {
-    text-align: center;
-    color: rgb(141, 141, 146);
+  text-align: center;
+  color: rgb(200, 200, 206);
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 #button-addon1 {
-    margin-bottom: 10px;
-    background-color: blue; 
-    color: white;
+  margin-bottom: 10px;
+  background-color: blue;
+  color: white;
 }
 
 #clock {
-    color: white;
+  color: white;
 }
