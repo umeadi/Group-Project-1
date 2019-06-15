@@ -4,8 +4,8 @@ $(document).ready(function() {
     
 console.log("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi");
 
-setInterval('updateClock()', 1000);
-function updateClock (time){
+setInterval(updateClock, 1000);
+function updateClock (){
     var currentTime = new Date( );
      var currentHours = currentTime.getHours( );
      var currentMinutes = currentTime.getMinutes( );
