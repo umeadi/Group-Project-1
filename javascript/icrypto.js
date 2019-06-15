@@ -25,8 +25,9 @@ function updateClock (){
      currentHours = ( currentHours == 0 ) ? 12 : currentHours;
 
      // Compose the string for display
-     var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-     $("#clock").html(currentTimeString);	  	
+     var currentTimeString = currentTime;
+     $("#clock").html(currentTimeString);
+     
      
       
 }
