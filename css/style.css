@@ -1,6 +1,7 @@
 body {
   background-image: url("../images/bitcoin-1813503_1920.jpg");
   margin-top: 20px;
+  position: relative;
 }
 
 .jumbotron-fluid {
@@ -12,12 +13,23 @@ p {
   color: darkgoldenrod;
 }
 
+
+
 #box1 {
   background-color: rgb(19, 17, 17);
   color: white;
   height: 360px;
   width: 540px;
   border: 1px solid gray;
+    
+  
+}
+
+#overflow {
+    width: 530px;
+  height: 260px;
+  overflow: scroll;
+  padding: 5px;
 }
 
 #box2 {
@@ -26,6 +38,8 @@ p {
   height: 360px;
   width: 540px;
   border: 1px solid gray;
+ 
+  
 }
 
 hr {
