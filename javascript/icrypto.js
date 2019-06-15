@@ -69,6 +69,7 @@ var usersInput;
 var usersCoins = []
 //var for the news title
 var newsTitle;
+//var for the story url
 console.log(usersInput)
 $("#button-addon1").on("click", usersNews)
 function usersNews() {
@@ -89,18 +90,21 @@ function usersNews() {
         method: "GET"
     }).then(function (response) {
         console.log(response)
-        for (var x = 0; x < 3; x++) {
+        for (var x = 0; x < 2; x++) {
             //Name of the coin that the user searched
             var coinName = response[0].coins[0].name
             //News Header
             newsTitle = response[x].title
-            var storyUrl = response[x].url
+            storyUrl = response[x].url
             console.log(coinName)
-            console.log("News Title----" + newsTitle)
+            console.log("News Title- " + newsTitle)
             addNewsSection()
             $("#userInput").val("")
+            
         }
     }, function (error) {
+
+        //Dynamically create a bootstrap toast element
         var errorDisplay = $("<div>")
         var errorDisplayExit=$("<button>")
         errorDisplayExit.attr({
@@ -138,10 +142,13 @@ function usersNews() {
 
 function addNewsSection() {
     var news = $("<tr>")
+    var newsLink = $("<a>")
+    newsLink.attr("href",storyUrl)
+    news.append(newsLink)
+    console.log(newsLink)
     $("#newsBox").prepend(news)
     news.attr("class", "list-group-item bg-dark")
     news.text(newsTitle)
-
 }
 function addUsersCointoArray() {
     usersCoins.push(usersInput)
