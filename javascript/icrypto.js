@@ -98,23 +98,24 @@ function usersNews() {
             storyUrl = response[x].url
             console.log(coinName)
             console.log("News Title- " + newsTitle)
-            addNewsSection()
+            addNewsSection(storyUrl, newsTitle)
             $("#userInput").val("")
             
         }
     }, function (error) {
-
+        
         //Dynamically create a bootstrap toast element
         var errorDisplay = $("<div>")
         var errorDisplayExit=$("<button>")
         errorDisplayExit.attr({
             "class":"ml-2 mb-1 close",
-            "data-dismiss":"toast"
+            "data-dismiss":"toast",
+            
         })
         errorDisplayExit.text("x")
         errorDisplayExit.css({
-            "display":"flex",
-            "text-align":"right"
+            "padding-left": "220px"
+
         })
         errorDisplay.attr("class", "toast")
         errorDisplay.attr("role", "alert")
@@ -140,15 +141,16 @@ function usersNews() {
 }
 
 
-function addNewsSection() {
-    var news = $("<tr>")
-    var newsLink = $("<a>")
-    newsLink.attr("href",storyUrl)
-    news.append(newsLink)
-    console.log(newsLink)
-    $("#newsBox").prepend(news)
+function addNewsSection(url, title) {
+    var news = $("<tr />")
+    var newsLink = $("<a />")
+    newsLink.attr("href",url)
     news.attr("class", "list-group-item bg-dark")
-    news.text(newsTitle)
+    newsLink.html(title)
+    news.append(newsLink[0])
+    console.log(newsLink[0])
+    $("#newsBox").prepend(news[0]);
+    // debugger;
 }
 function addUsersCointoArray() {
     usersCoins.push(usersInput)
