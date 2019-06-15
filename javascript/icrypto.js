@@ -34,7 +34,9 @@ console.log("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi"
 // ***              Tez code here        ***
 // CryptoControl API
 var usersInput;
+//Users coin array
 var usersCoins = []
+//var for the news title
 var newsTitle;
 console.log(usersInput)
 $("#button-addon1").on("click", usersNews)
@@ -48,7 +50,7 @@ function usersNews() {
     //Crypto Control Api key
     var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7"
     //Url to connect to crypto control
-    var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/"+usersInput+"?key="+cryptoCntrlApi_key
+    var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/" + usersInput + "?key=" + cryptoCntrlApi_key
     console.log("UsersInput---" + usersInput)
     console.log(cryptoCntrlUrl)
     $.ajax({
@@ -56,28 +58,57 @@ function usersNews() {
         method: "GET"
     }).then(function (response) {
         console.log(response)
-        //Name of the coin that the user searched
-        var coinName = response[0].coins[0].name
-        //News Header
-        newsTitle = response[0].title
-        var storyUrl = response[0].url
-        console.log(coinName)
-        console.log("News Title----" + newsTitle)
-        addNewsSection()
-        $("#userInput").val("")
-    },function(error){
-        console.log(error)
-        var errorStatus= error.status
-        alert(errorStatus)
+        for (var x = 0; x < 3; x++) {
+            //Name of the coin that the user searched
+            var coinName = response[0].coins[0].name
+            //News Header
+            newsTitle = response[x].title
+            var storyUrl = response[x].url
+            console.log(coinName)
+            console.log("News Title----" + newsTitle)
+            addNewsSection()
+            $("#userInput").val("")
+        }
+    }, function (error) {
+        var errorDisplay = $("<div>")
+        var errorDisplayExit=$("<button>")
+        errorDisplayExit.attr({
+            "class":"ml-2 mb-1 close",
+            "data-dismiss":"toast"
+        })
+        errorDisplayExit.text("x")
+        errorDisplayExit.css({
+            "display":"flex",
+            "text-align":"right"
+        })
+        errorDisplay.attr("class", "toast")
+        errorDisplay.attr("role", "alert")
+        errorDisplay.attr("data-autohide", "false")
+        errorDisplay.css({
+            "color":"red"
+        })
+        var toast = $("<div>")
+        toast.text("iCrypto Alert")
+        toast.append(errorDisplayExit)
+        toast.attr("class", "toast-header")
+        var toastBody = $("<div>")
+        toastBody.attr("class", "toast-body")
+        errorDisplay.append(toast)
+        errorDisplay.append(toastBody)
+        var errorStatus = error.status
+        toastBody.text("Coin not found in database. Be sure spelling is correct.")
+        $("#errorBox").append(errorDisplay)
+        $(".toast").toast("show")
+        // alert(errorStatus)
 
     });
 }
 
 
 function addNewsSection() {
-    var news = $("<tr>")    
+    var news = $("<tr>")
     $("#newsBox").prepend(news)
-    news.attr("class","list-group-item bg-dark")
+    news.attr("class", "list-group-item bg-dark")
     news.text(newsTitle)
 
 }
