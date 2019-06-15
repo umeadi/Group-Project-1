@@ -103,7 +103,7 @@ function usersNews() {
             
         }
     }, function (error) {
-        
+        $(".toast").hide()
         //Dynamically create a bootstrap toast element
         var errorDisplay = $("<div>")
         var errorDisplayExit=$("<button>")
@@ -144,6 +144,7 @@ function usersNews() {
 function addNewsSection(url, title) {
     var news = $("<tr />")
     var newsLink = $("<a />")
+    newsLink.attr("target","blank")
     newsLink.attr("href",url)
     news.attr("class", "list-group-item bg-dark")
     newsLink.html(title)
