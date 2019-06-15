@@ -8,5 +8,13 @@ body {
 
 .jumbotron-fluid {
     background-image : url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg")
-    color: rgb(206, 158, 158);
+   
+}
+
+h1, p {
+    color: darkgoldenrod;
+}
+
+#cryptoSearch {
+    backgroud-color: blue;
 }
