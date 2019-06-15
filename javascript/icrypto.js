@@ -41,12 +41,14 @@ $("#button-addon1").on("click", usersNews)
 function usersNews() {
     event.preventDefault();
     //makes a variable called user-input with the value of the input box
-    usersInput = $("#userInput").val();
+    usersInput = $("#userInput").val().toLowerCase();
+    
+
     //Crypto Control Api key
     var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7"
     //Url to connect to crypto control
     var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/" + usersInput + "?key=" + cryptoCntrlApi_key
-    console.log(usersInput)
+    console.log("UsersInput---"+usersInput)
     console.log(cryptoCntrlUrl)
     $.ajax({
         url: cryptoCntrlUrl,
