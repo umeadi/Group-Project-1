@@ -68,7 +68,8 @@ function usersNews() {
     },function(error){
         console.log(error)
         var errorStatus= error.status
-        alert(errorStatus).
+        alert(errorStatus)
+
     });
 }
 
