@@ -13,4 +13,12 @@ h1, p {
     color: darkgoldenrod;
 }
 
+#box1 {
+    background-color: black;
+    color: white;
+}
 
+#box2 {
+    background-color: black;
+    color: white;
+}
