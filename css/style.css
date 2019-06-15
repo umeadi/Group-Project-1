@@ -13,4 +13,34 @@ h1, p {
     color: darkgoldenrod;
 }
 
+#box1 {
+    background-color: black;
+    color: white;
+}
 
+#box2 {
+    background-color: black;
+    color: white;
+}
+
+hr { 
+    display: block;
+    margin-before: 0.5em;
+    margin-after: 0.5em;
+    margin-start: auto;
+    margin-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.card-title {
+    text-align: center;
+    color: blue;
+}
+
+#button-addon1 {
+    margin-bottom: 10px;
+    background-color: blue; 
+    color: white;
+}
