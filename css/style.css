@@ -14,13 +14,20 @@ h1, p {
 }
 
 #box1 {
-    background-color: black;
+    background-color: rgb(19, 17, 17);
     color: white;
+    height: 360px; 
+    width: 540px;
+    border: 1px solid gray;
+    
 }
 
 #box2 {
-    background-color: black;
+    background-color:rgb(19, 17, 17);
     color: white;
+    height: 360px; 
+    width: 540px;
+    border: 1px solid gray;
 }
 
 hr { 
@@ -32,11 +39,12 @@ hr {
     overflow: hidden;
     border-style: inset;
     border-width: 1px;
+    border-color: gray;
 }
 
 .card-title {
     text-align: center;
-    color: blue;
+    color: rgb(141, 141, 146);
 }
 
 #button-addon1 {
