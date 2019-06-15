@@ -40,7 +40,7 @@ console.log(usersInput)
 $("#button-addon1").on("click", usersNews)
 function usersNews() {
     event.preventDefault();
-    //makes a variable called user-input with the value of the input box
+    //makes a variable called userInput with the value of the input box
     usersInput = $("#userInput").val().toLowerCase();
     
 
@@ -64,6 +64,7 @@ function usersNews() {
         console.log(coinSymbol)
         console.log("News Title----"+newsTitle)
         console.log(similiarArticles)
+    
     });
     $("#userInput").val("")
 }
