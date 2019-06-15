@@ -1,9 +1,7 @@
 console.log("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi");
 
 
-// ***             Jon code here         ***
-// Twitter API
-// var twitterApiKey = "..."
+
 
 
 
