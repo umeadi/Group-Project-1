@@ -95,17 +95,20 @@ function usersNews() {
         console.log("News Title----" + newsTitle)
         addNewsSection()
         $("#userInput").val("")
+    },function(error){
+        console.log(error)
+        var errorStatus= error.status
+        alert(errorStatus)
+
     });
 }
 
 
 function addNewsSection() {
-    var news = $("<tr>")
-    
+    var news = $("<tr>")    
     $("#newsBox").prepend(news)
     news.attr("class","list-group-item bg-dark")
     news.text(newsTitle)
-
 
 }
 function addUsersCointoArray() {
