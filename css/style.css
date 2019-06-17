@@ -13,23 +13,19 @@ p {
   color: darkgoldenrod;
 }
 
-
-
 #box1 {
   background-color: rgb(19, 17, 17);
   color: white;
   height: 360px;
   width: 540px;
   border: 1px solid gray;
-    
-  
 }
 
 #overflow {
-    width: 530px;
-  height: 260px;
+  width: 534px;
+  height: 265px;
   overflow: scroll;
-  padding: 5px;
+  padding: 3px;
 }
 
 #box2 {
@@ -38,16 +34,10 @@ p {
   height: 360px;
   width: 540px;
   border: 1px solid gray;
- 
-  
 }
 
 hr {
   display: block;
-  margin-before: 0.5em;
-  margin-after: 0.5em;
-  margin-start: auto;
-  margin-end: auto;
   overflow: hidden;
   border-style: inset;
   border-width: 1px;
