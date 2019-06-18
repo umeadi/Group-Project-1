@@ -192,9 +192,34 @@ $(document).ready(function () {
 
 
 
+// ***              Marlon code here            ***
+// CryptoGeckoAPI Call
+
+// Global variables:
+
+var coinName;
+var currentPrice;
+var highPrice;
+var lowPrice;
+var marketCap;
+
+
+var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero"
+var coinGeckoApiKey = ""
+
+
+// function usersPricing () {
+
+
+
     // ***              Marlon code here            ***
     // CoinAPI
     // var cmkApiKey = "..."
+
+$.ajax({
+    url: coinGeckoUrl,
+    method: "GET",
+
 
 
     var coinApiUrl = "https://rest.coinapi.io/v1/exchangerate/BTC/"
@@ -212,7 +237,57 @@ $(document).ready(function () {
 
     }).then(function (response) {
 
+console.log(response)
 
+coinName = response.name;
+console.log(coinName);
+
+currentPrice = response.market_data.current_price.usd;
+console.log("Current Price: -- $" +currentPrice);
+
+highPrice = response.market_data.high_24h.usd;
+console.log("High Price: -- $" +highPrice);
+
+lowPrice = response.market_data.low_24h.usd;
+console.log("Low Price: -- $"+lowPrice)
+
+marketCap = response.market_data.market_cap.usd;
+console.log("Market Cap: -- $"+marketCap.toLocaleString('en') );
+
+addPriceData();
+        
+
+
+});
+
+// Appends Price Data to table
+function addPriceData() {
+    // var newRow =$("<tr>").append(
+    //     $("<td>").text("Coin Name"),
+    //     $("<td>").text("Market Cap"),
+    //     $("<td>").text("Coin Price"),
+    //     $("<td>").text("24-hr High"),
+    //     $("<td>").text("24-hr Low")
+
+    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"));
+
+
+
+    // var prices = $("<tr>")    
+    
+    // prices.attr("class","list-group-item bg-dark")
+    // prices.text(currentPrice)
+    // var head = $("<thead>")
+    // $("#cryptoBox").prepend(head)
+    // head.append(prices)
+    // var th = $("<th>")
+    // th.attr("scope", "col")
+    // th.text("Current Price")
+
+    $("#cryptoBox").append(newRow);
+    addUsersCointoArray();
+
+}
 
 
     })
@@ -222,7 +297,6 @@ $(document).ready(function () {
 
 
 
-});
 
 
 
