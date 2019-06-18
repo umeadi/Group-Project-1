@@ -66,78 +66,78 @@ $(document).ready(function () {
     // CryptoControl API
     var usersInput;
     //Users coin array
-    var usersCoinsArray = []
+    var usersCoinsArray = [];
     //var for the news title
     var newsTitle;
-    console.log("Users Input- " + usersInput)
-    $("#button-addon1").on("click", usersNews)
+    console.log("Users Input- " + usersInput);
+    $("#button-addon1").on("click", usersNews);
     function usersNews() {
         event.preventDefault();
         //assign the usersInput variable with the value of the Input box and turn those to lowercase letters
         usersInput = $("#userInput").val().toLowerCase();
 
         //run the addUSerstoArray function
-        addUsersCointoArray()
+        addUsersCointoArray();
 
         //Crypto Control Api key
-        var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7"
+        var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7";
         //Url to connect to crypto control
-        var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/" + usersInput + "?key=" + cryptoCntrlApi_key
-        console.log(cryptoCntrlUrl)
-        addUsersInputToStorage()
+        var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/" + usersInput + "?key=" + cryptoCntrlApi_key;
+        console.log(cryptoCntrlUrl);
+        addUsersInputToStorage();
         $.ajax({
             url: cryptoCntrlUrl,
             method: "GET"
         }).then(function (response) {
-            console.log(response)
+            console.log(response);
             //Run a for loop 3 times
             for (var x = 0; x < 3; x++) {
                 //gives coinName the value of the name of the coin from the response
-                var coinName = response[0].coins[0].name
+                var coinName = response[0].coins[0].name;
                 //News Header
-                newsTitle = response[x].title
-                storyUrl = response[x].url
-                console.log(coinName)
+                newsTitle = response[x].title;
+                storyUrl = response[x].url;
+                console.log(coinName);
                 //Run the addNewsSection function 
-                addNewsSection(storyUrl, newsTitle)
+                addNewsSection(storyUrl, newsTitle);
                 //empty the input box
-                $("#userInput").val("")
+                $("#userInput").val("");
 
             }
         }, function (error) {
             //hides any toast thats already on the page
-            $(".toast").hide()
+            $(".toast").hide();
             //Dynamically create a bootstrap toast element
-            var errorDisplay = $("<div>")
-            var errorDisplayExit = $("<button>")
+            var errorDisplay = $("<div>");
+            var errorDisplayExit = $("<button>");
             errorDisplayExit.attr({
                 "class": "ml-2 mb-1 close",
                 "data-dismiss": "toast",
 
             })
-            errorDisplayExit.text("x")
+            errorDisplayExit.text("x");
             errorDisplayExit.css({
                 "padding-left": "220px"
 
             })
-            errorDisplay.attr("class", "toast")
-            errorDisplay.attr("role", "alert")
-            errorDisplay.attr("data-autohide", "false")
+            errorDisplay.attr("class", "toast");
+            errorDisplay.attr("role", "alert");
+            errorDisplay.attr("data-autohide", "false");
             errorDisplay.css({
                 "color": "red"
-            })
-            var toast = $("<div>")
-            toast.text("iCrypto Alert")
-            toast.append(errorDisplayExit)
-            toast.attr("class", "toast-header")
-            var toastBody = $("<div>")
-            toastBody.attr("class", "toast-body")
-            errorDisplay.append(toast)
-            errorDisplay.append(toastBody)
-            var errorStatus = error.status
-            toastBody.text("Coin not found in database. Be sure spelling is correct.")
-            $("#errorBox").append(errorDisplay)
-            $(".toast").toast("show")
+            });
+            var toast = $("<div>");
+            toast.text("iCrypto Alert");
+            toast.append(errorDisplayExit);
+            toast.attr("class", "toast-header");
+            var toastBody = $("<div>");
+            toastBody.attr("class", "toast-body");
+            errorDisplay.append(toast);
+            errorDisplay.append(toastBody);
+            var errorStatus = error.status;
+            toastBody.text("Coin not found in database. Be sure spelling is correct.");
+            $("#errorBox").append(errorDisplay);
+            $(".toast").toast("show");
             // alert(errorStatus)
 
         });
@@ -145,19 +145,19 @@ $(document).ready(function () {
 
 
     function addNewsSection(url, title) {
-        var news = $("<tr />")
-        var newsLink = $("<a />")
-        newsLink.attr("target", "blank")
-        newsLink.attr("href", url)
-        news.attr("class", "list-group-item bg-dark")
-        newsLink.html(title)
-        news.append(newsLink[0])
-        console.log(newsLink[0])
+        var news = $("<tr />");
+        var newsLink = $("<a />");
+        newsLink.attr("target", "blank");
+        newsLink.attr("href", url);
+        news.attr("class", "list-group-item bg-dark");
+        newsLink.html(title);
+        news.append(newsLink[0]);
+        console.log(newsLink[0]);
         $("#newsBox").prepend(news[0]);
         // debugger;
     }
     function addUsersCointoArray() {
-        usersCoinsArray.push(usersInput)
+        usersCoinsArray.push(usersInput);
     }
     //Local Storage 
     function addUsersInputToStorage(){
@@ -229,7 +229,7 @@ $.ajax({
         beforeSend: function (xhrObj) {
             xhrObj.setRequestHeader("Accept", "application/json");
             xhrObj.setRequestHeader("X-CoinAPI-Key", "14225887-81E7-4652-97A8-B4463485B47D");
-            xhrObj.setRequestHeader("Access-Control-Allow-Origin", "*")
+            xhrObj.setRequestHeader("Access-Control-Allow-Origin", "*");
         },
         url: coinApiUrl,
         method: "GET",
@@ -237,7 +237,7 @@ $.ajax({
 
     }).then(function (response) {
 
-console.log(response)
+console.log(response);
 
 coinName = response.name;
 console.log(coinName);
@@ -258,7 +258,7 @@ addPriceData();
         
 
 
-});
+})
 
 // Appends Price Data to table
 function addPriceData() {
@@ -269,7 +269,7 @@ function addPriceData() {
     //     $("<td>").text("24-hr High"),
     //     $("<td>").text("24-hr Low")
 
-    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"));
+    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"))
 
 
 
@@ -290,7 +290,7 @@ function addPriceData() {
 }
 
 
-    })
+    });
 
 
 
