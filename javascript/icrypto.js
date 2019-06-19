@@ -114,12 +114,12 @@ $(document).ready(function () {
                 "class": "ml-2 mb-1 close",
                 "data-dismiss": "toast",
 
-            })
+            });
             errorDisplayExit.text("x");
             errorDisplayExit.css({
                 "padding-left": "220px"
 
-            })
+            });
             errorDisplay.attr("class", "toast");
             errorDisplay.attr("role", "alert");
             errorDisplay.attr("data-autohide", "false");
@@ -204,8 +204,8 @@ var lowPrice;
 var marketCap;
 
 
-var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero"
-var coinGeckoApiKey = ""
+var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero";
+var coinGeckoApiKey = "";
 
 
 // function usersPricing () {
