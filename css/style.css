@@ -8,6 +8,13 @@ body {
   background-image: url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg");
 }
 
+.lead {
+    background-color: rgb(39, 38, 38);
+    color: white;
+    width: 450px;
+    margin-left: 310px;
+}
+
 h1,
 p {
   color: darkgray;
