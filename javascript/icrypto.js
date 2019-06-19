@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    var coins = localStorage.getItem("usersCoins")
+    if (coins != null) {
+        var coinArray = coins.split(",")
+
+        for (x = 0; x < coinArray.length; x++) {
+            callCoinGecko(coinArray[x])
+            makeApiCall(coinArray[x])
+        }
+    }
+
 
 
     console.log("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi");
@@ -69,20 +79,14 @@ $(document).ready(function () {
     //var for the news title
     var newsTitle;
     console.log("Users Input- " + usersInput);
+
     $("#button-addon1").on("click", usersNews);
     $("#button-addon1").on("click", addPriceData);
-    function usersNews() {
-        event.preventDefault();
-        //assign the usersInput variable with the value of the Input box and turn those to lowercase letters
-        usersInput = $("#userInput").val().toLowerCase();
-
-
+    function makeApiCall(usersInput) {
         //Crypto Control Api key
         var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7";
         //Url to connect to crypto control
         var cryptoCntrlUrl = "https://cryptocontrol.io/api/v1/public/news/coin/" + usersInput + "?key=" + cryptoCntrlApi_key;
-        console.log(cryptoCntrlUrl);
-        addUsersInputToStorage();
         $.ajax({
             url: cryptoCntrlUrl,
             method: "GET"
@@ -140,6 +144,15 @@ $(document).ready(function () {
 
         });
     }
+    function usersNews() {
+        event.preventDefault();
+        //assign the usersInput variable with the value of the Input box and turn those to lowercase letters
+        usersInput = $("#userInput").val().toLowerCase();
+
+        makeApiCall(usersInput)
+        addUsersInputToStorage();
+
+    }
 
 
     function addNewsSection(url, title) {
@@ -155,22 +168,15 @@ $(document).ready(function () {
         // debugger;
     }
     //Local Storage 
-    function addUsersInputToStorage(){
+    function addUsersInputToStorage() {
 
-    var coins = localStorage.getItem("usersCoins")
-    if(coins===null){
-        coins=""
-    }
-    coins=coins+","+usersInput
-    // Save data to the current local store
-    localStorage.setItem("usersCoins", coins);
-    var coinArray = coins.split(",")
-    console.log(coinArray)
-    }
-    
-    for(x=0;x<coinArray.length;x++){
-        
-
+        var coins = localStorage.getItem("usersCoins")
+        if (coins === null) {
+            coins = ""
+        }
+        coins = coins + "," + usersInput
+        // Save data to the current local store
+        localStorage.setItem("usersCoins", coins);
     }
 
 
@@ -195,90 +201,95 @@ $(document).ready(function () {
 
 
 
-    
-
-// ***              Marlon code here            ***
-// CryptoGeckoAPI Call
-
-// Global variables:
-
-var coinName;
-var currentPrice;
-var highPrice;
-var lowPrice;
-var marketCap;
 
 
 
 
-var coinGeckoApiKey = "";
+    // ***              Marlon code here            ***
+    // CryptoGeckoAPI Call
 
+    // Global variables:
 
-// function usersPricing () {
-
-
-
-
-// Appends Price Data to table
-function addPriceData() {
-    usersInput = $("#userInput").val().toLowerCase();
-    var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/"+usersInput;
-    // var newRow =$("<tr>").append(
-    //     $("<td>").text("Coin Name"),
-    //     $("<td>").text("Market Cap"),
-    //     $("<td>").text("Coin Price"),
-    //     $("<td>").text("24-hr High"),
-    //     $("<td>").text("24-hr Low")
-
-    $.ajax({
-        url: coinGeckoUrl,
-        method: "GET",
-    
-    }).then(function (response) {
-    
-    console.log(response)
-    
-    coinName = response.name;
-    console.log(coinName);
-    
-    currentPrice = response.market_data.current_price.usd;
-    console.log("Current Price: -- $" +currentPrice);
-    
-    highPrice = response.market_data.high_24h.usd;
-    console.log("High Price: -- $" +highPrice);
-    
-    lowPrice = response.market_data.low_24h.usd;
-    console.log("Low Price: -- $"+lowPrice)
-    
-    marketCap = response.market_data.market_cap.usd;
-    console.log("Market Cap: -- $"+marketCap.toLocaleString('en') );
-    
-    // addPriceData();
-            
-    
-    
-    
-
-    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"));
+    var coinName;
+    var currentPrice;
+    var highPrice;
+    var lowPrice;
+    var marketCap;
 
 
 
-    // var prices = $("<tr>")    
-    
-    // prices.attr("class","list-group-item bg-dark")
-    // prices.text(currentPrice)
-    // var head = $("<thead>")
-    // $("#cryptoBox").prepend(head)
-    // head.append(prices)
-    // var th = $("<th>")
-    // th.attr("scope", "col")
-    // th.text("Current Price")
 
-    $("#cryptoBox").append(newRow);
+    var coinGeckoApiKey = "";
 
-});
 
-}
+    // function usersPricing () {
+
+
+    function callCoinGecko(usersInput) {
+        var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/" + usersInput;
+        // var newRow =$("<tr>").append(
+        //     $("<td>").text("Coin Name"),
+        //     $("<td>").text("Market Cap"),
+        //     $("<td>").text("Coin Price"),
+        //     $("<td>").text("24-hr High"),
+        //     $("<td>").text("24-hr Low")
+
+        $.ajax({
+            url: coinGeckoUrl,
+            method: "GET",
+
+        }).then(function (response) {
+
+            console.log(response)
+
+            coinName = response.name;
+            console.log(coinName);
+
+            currentPrice = response.market_data.current_price.usd;
+            console.log("Current Price: -- $" + currentPrice);
+
+            highPrice = response.market_data.high_24h.usd;
+            console.log("High Price: -- $" + highPrice);
+
+            lowPrice = response.market_data.low_24h.usd;
+            console.log("Low Price: -- $" + lowPrice)
+
+            marketCap = response.market_data.market_cap.usd;
+            console.log("Market Cap: -- $" + marketCap.toLocaleString('en'));
+
+            // addPriceData();
+
+
+
+
+
+            var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>" + marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice + "</td></tr>"));
+
+
+
+            // var prices = $("<tr>")    
+
+            // prices.attr("class","list-group-item bg-dark")
+            // prices.text(currentPrice)
+            // var head = $("<thead>")
+            // $("#cryptoBox").prepend(head)
+            // head.append(prices)
+            // var th = $("<th>")
+            // th.attr("scope", "col")
+            // th.text("Current Price")
+
+            $("#cryptoBox").append(newRow);
+
+        });
+    }
+
+    // Appends Price Data to table
+    function addPriceData(usersCoin) {
+        usersInput = $("#userInput").val().toLowerCase();
+        callCoinGecko(usersInput)
+
+
+    }
 
 
 });
