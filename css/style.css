@@ -10,7 +10,7 @@ body {
 
 h1,
 p {
-  color: darkgoldenrod;
+  color: darkgray;
 }
 
 #box1 {
@@ -57,10 +57,17 @@ hr {
 
 #button-addon1 {
   margin-bottom: 10px;
-  background-color: blue;
+  background-color: red;
   color: white;
 }
 
 #clock {
+    background-color: rgb(39, 38, 38);
   color: white;
+  width: 450px;
+  margin-left: 330px;
+}
+
+a {
+    color: white;
 }
