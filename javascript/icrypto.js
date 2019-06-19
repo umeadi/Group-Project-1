@@ -66,7 +66,6 @@ $(document).ready(function () {
     // CryptoControl API
     var usersInput;
     //Users coin array
-    var usersCoinsArray = [];
     //var for the news title
     var newsTitle;
     console.log("Users Input- " + usersInput);
@@ -76,8 +75,6 @@ $(document).ready(function () {
         //assign the usersInput variable with the value of the Input box and turn those to lowercase letters
         usersInput = $("#userInput").val().toLowerCase();
 
-        //run the addUSerstoArray function
-        addUsersCointoArray();
 
         //Crypto Control Api key
         var cryptoCntrlApi_key = "cec0cc48894cba4ec6f690b99efc0bc7";
@@ -156,15 +153,24 @@ $(document).ready(function () {
         $("#newsBox").prepend(news[0]);
         // debugger;
     }
-    function addUsersCointoArray() {
-        usersCoinsArray.push(usersInput);
-    }
     //Local Storage 
     function addUsersInputToStorage(){
-    // Save data to the current local store
-    localStorage.setItem("usersCoin", usersCoinsArray);
-    }
 
+    var coins = localStorage.getItem("usersCoins")
+    if(coins===null){
+        coins=""
+    }
+    coins=coins+","+usersInput
+    // Save data to the current local store
+    localStorage.setItem("usersCoins", coins);
+    var coinArray = coins.split(",")
+    console.log(coinArray)
+    }
+    
+    for(x=0;x<coinArray.length;x++){
+        
+
+    }
 
 
 
@@ -264,7 +270,6 @@ function addPriceData() {
     // th.text("Current Price")
 
     $("#cryptoBox").append(newRow);
-    addUsersCointoArray();
 
 }
 
