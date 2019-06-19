@@ -188,9 +188,7 @@ $(document).ready(function () {
 
 
 
-
-
-
+    
 
 // ***              Marlon code here            ***
 // CryptoGeckoAPI Call
@@ -204,6 +202,7 @@ var lowPrice;
 var marketCap;
 
 
+
 var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero";
 var coinGeckoApiKey = "";
 
@@ -211,33 +210,13 @@ var coinGeckoApiKey = "";
 // function usersPricing () {
 
 
-
-    // ***              Marlon code here            ***
-    // CoinAPI
-    // var cmkApiKey = "..."
-
 $.ajax({
     url: coinGeckoUrl,
     method: "GET",
 
+}).then(function (response) {
 
-
-    var coinApiUrl = "https://rest.coinapi.io/v1/exchangerate/BTC/"
-    var coinApiKey = "14225887-81E7-4652-97A8-B4463485B47D"
-
-    $.ajax({
-        beforeSend: function (xhrObj) {
-            xhrObj.setRequestHeader("Accept", "application/json");
-            xhrObj.setRequestHeader("X-CoinAPI-Key", "14225887-81E7-4652-97A8-B4463485B47D");
-            xhrObj.setRequestHeader("Access-Control-Allow-Origin", "*");
-        },
-        url: coinApiUrl,
-        method: "GET",
-        // header: "X-CoinAPI-Key: 14225887-81E7-4652-97A8-B4463485B47D"
-
-    }).then(function (response) {
-
-console.log(response);
+console.log(response)
 
 coinName = response.name;
 console.log(coinName);
@@ -258,7 +237,7 @@ addPriceData();
         
 
 
-})
+});
 
 // Appends Price Data to table
 function addPriceData() {
@@ -269,7 +248,7 @@ function addPriceData() {
     //     $("<td>").text("24-hr High"),
     //     $("<td>").text("24-hr Low")
 
-    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"))
+    var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"));
 
 
 
