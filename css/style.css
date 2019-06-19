@@ -22,7 +22,8 @@ p {
 }
 
 th {
-  font-size: 90%;
+  font-size: 13px;
+  background-color: #000000;
 }
 
 #overflow {
@@ -57,7 +58,6 @@ hr {
 
 #button-addon1 {
   margin-bottom: 10px;
-  background-color: red;
   color: white;
 }
 
