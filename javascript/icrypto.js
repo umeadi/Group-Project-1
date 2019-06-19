@@ -188,9 +188,7 @@ $(document).ready(function () {
 
 
 
-
-
-
+    
 
 // ***              Marlon code here            ***
 // CryptoGeckoAPI Call
@@ -203,25 +201,11 @@ var highPrice;
 var lowPrice;
 var marketCap;
 
-
 var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero"
 var coinGeckoApiKey = ""
 
 
 // function usersPricing () {
-
-
-
-    // ***              Marlon code here            ***
-    // CoinAPI
-    // var cmkApiKey = "..."
-
-$.ajax({
-    url: coinGeckoUrl,
-    method: "GET",
-
-
-
     var coinApiUrl = "https://rest.coinapi.io/v1/exchangerate/BTC/"
     var coinApiKey = "14225887-81E7-4652-97A8-B4463485B47D"
 
