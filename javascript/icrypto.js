@@ -71,6 +71,7 @@ $(document).ready(function () {
     var newsTitle;
     console.log("Users Input- " + usersInput);
     $("#button-addon1").on("click", usersNews);
+    $("#button-addon1").on("click", addPriceData);
     function usersNews() {
         event.preventDefault();
         //assign the usersInput variable with the value of the Input box and turn those to lowercase letters
@@ -203,50 +204,54 @@ var marketCap;
 
 
 
-var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/monero";
+
 var coinGeckoApiKey = "";
 
 
 // function usersPricing () {
 
 
-$.ajax({
-    url: coinGeckoUrl,
-    method: "GET",
 
-}).then(function (response) {
-
-console.log(response)
-
-coinName = response.name;
-console.log(coinName);
-
-currentPrice = response.market_data.current_price.usd;
-console.log("Current Price: -- $" +currentPrice);
-
-highPrice = response.market_data.high_24h.usd;
-console.log("High Price: -- $" +highPrice);
-
-lowPrice = response.market_data.low_24h.usd;
-console.log("Low Price: -- $"+lowPrice)
-
-marketCap = response.market_data.market_cap.usd;
-console.log("Market Cap: -- $"+marketCap.toLocaleString('en') );
-
-addPriceData();
-        
-
-
-});
 
 // Appends Price Data to table
 function addPriceData() {
+    usersInput = $("#userInput").val().toLowerCase();
+    var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/"+usersInput;
     // var newRow =$("<tr>").append(
     //     $("<td>").text("Coin Name"),
     //     $("<td>").text("Market Cap"),
     //     $("<td>").text("Coin Price"),
     //     $("<td>").text("24-hr High"),
     //     $("<td>").text("24-hr Low")
+
+    $.ajax({
+        url: coinGeckoUrl,
+        method: "GET",
+    
+    }).then(function (response) {
+    
+    console.log(response)
+    
+    coinName = response.name;
+    console.log(coinName);
+    
+    currentPrice = response.market_data.current_price.usd;
+    console.log("Current Price: -- $" +currentPrice);
+    
+    highPrice = response.market_data.high_24h.usd;
+    console.log("High Price: -- $" +highPrice);
+    
+    lowPrice = response.market_data.low_24h.usd;
+    console.log("Low Price: -- $"+lowPrice)
+    
+    marketCap = response.market_data.market_cap.usd;
+    console.log("Market Cap: -- $"+marketCap.toLocaleString('en') );
+    
+    // addPriceData();
+            
+    
+    
+    
 
     var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>"+ marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice  + "</td></tr>"));
 
@@ -266,10 +271,12 @@ function addPriceData() {
     $("#cryptoBox").append(newRow);
     addUsersCointoArray();
 
+});
+
 }
 
 
-    });
+});
 
 
 
