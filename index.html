@@ -2,107 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-              crossorigin="anonymous"></script>
-    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <title>ICrypto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>iCrypto</title>
+
+
 
 </head>
 
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col col-12">
-    <div style="text-align:center" class="jumbotron jumbotron-fluid">
+<div class="container">
+
+  <div class="row">
+
+    <div class="col col-12">
+      <div class="col col-12">
+        <div id="clock"></div>
+      </div>
+      <div style="text-align:center" class="jumbotron jumbotron-fluid">
+
         <div class="container">
+          <div class="row">
+
+          </div>
           <h1 class="display-4">iCrypto Currency Tracker</h1>
           <p class="lead">Track Only The Crypto Currencies That YOU Want!</p>
         </div>
-        <div id="clock"></div>
+
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col col-4">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-danger" type="button" id="button-addon1">Search</button>
+      </div>
+      <input id="userInput" type="text" class="form-control" placeholder="Enter Crypto Here"
+        aria-label="Example text with button addon" aria-describedby="button-addon1">
+      <div id="errorBox"></div>
     </div>
-    </div>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col col-4">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-danger" type="button" id="button-addon1">Search</button>
-                </div>
-                <input id="userInput" type="text" class="form-control" placeholder="Enter Crypto Here" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <div id="errorBox"></div>
-              </div>
+  </div>
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div id="box1">
+        <!-- <img src="..." class="card-img" alt="..."> -->
+        <div class="card-img-overlay">
+          <h5 class="card-title">Crypto Coins</h5>
+          <hr>
+          <div>
+            <div id="overflow">
+
+              <table class="table table-striped table-dark">
+                <thead class="thead-default">
+                  <tr>
+                    <th scope="col">Coin Name</th>
+                    <th scope="col">Market Cap</th>
+                    <th scope="col">Coin Price</th>
+                    <th scope="col">24-hr High</th>
+                    <th scope="col">24-hr Low</th>
+                  </tr>
+                </thead>
+                <tbody id="cryptoBox"></tbody>
+
+              </table>
+
+              </table>
+            </div>
+          </div>
         </div>
-    
+      </div>
+
+
     </div>
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-             <div id="box1">
-                    <!-- <img src="..." class="card-img" alt="..."> -->
-                    <div  class="card-img-overlay">
-                      <h5 class="card-title">Crypto Coins</h5>
-                      <hr>
-                    <div>
-                      <div id="overflow">
+    <div class="col-lg-6">
+      <div id="box2">
+        <!-- <img src="..." class="card-img" alt="..."> -->
+        <div class="card-img-overlay">
+          <h5 class="card-title">Crypto Currency News</h5>
+          <hr>
+          <div>
+            <div id="overflow">
+              <table id="newsBox">
 
-                          <table class="table table-striped table-dark">
-                              <thead class="thead-default">
-                                <tr>
-                                  <th scope="col">Coin Name</th>
-                                  <th scope="col">Market Cap</th>
-                                  <th scope="col">Coin Price</th>
-                                  <th scope="col">24-hr High</th>
-                                  <th scope="col">24-hr Low</th>
-                                </tr>
-                              </thead>
-                              <tbody id="cryptoBox"></tbody>
-                              
-                            </table>
-
-                      </table>
-                    </div>
-                   </div>
-                    </div>
-                  </div>
-
-                  
-    </div>
-        <div class="col-lg-6">
-                <div id="box2">
-                        <!-- <img src="..." class="card-img" alt="..."> -->
-                        <div  class="card-img-overlay">
-                          <h5 class="card-title">Crypto Currency News</h5>
-                          <hr>
-                        <div>
-                          <div id="overflow">
-                          <table id="newsBox">
-
-                          </table>
-                        </div>
-                        </div>
-                        </div>
-                      </div>
+              </table>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
+</div>
 
 
 
 
-   
+
 
 
 

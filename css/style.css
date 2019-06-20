@@ -71,8 +71,10 @@ hr {
 #clock {
     background-color: rgb(39, 38, 38);
   color: white;
-  width: 450px;
-  margin-left: 330px;
+  width: 470px;
+ float: right;
+ margin-top: 10px;
+ 
 }
 
 a {
