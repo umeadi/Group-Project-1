@@ -8,9 +8,16 @@ body {
   background-image: url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg");
 }
 
+.lead {
+    background-color: rgb(39, 38, 38);
+    color: white;
+    width: 450px;
+    margin-left: 310px;
+}
+
 h1,
 p {
-  color: darkgoldenrod;
+  color: darkgray;
 }
 
 #box1 {
@@ -22,7 +29,8 @@ p {
 }
 
 th {
-  font-size: 90%;
+  font-size: 13px;
+  background-color: #000000;
 }
 
 #overflow {
@@ -57,10 +65,16 @@ hr {
 
 #button-addon1 {
   margin-bottom: 10px;
-  background-color: blue;
   color: white;
 }
 
 #clock {
+    background-color: rgb(39, 38, 38);
   color: white;
+  width: 450px;
+  margin-left: 330px;
+}
+
+a {
+    color: white;
 }
