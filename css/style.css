@@ -22,15 +22,16 @@ body {
 }
 
 .lead {
-    background-color: rgb(39, 38, 38);
-    color: white;
-    width: 450px;
+    
+    color:  #f7931b;
+    width: 500px;
     margin-left: 310px;
 }
 
 h1,
 p {
   color: white;
+  
   
 }
 
@@ -88,7 +89,7 @@ hr {
 }
 
 #clock {
-    background-color: rgb(39, 38, 38);
+    
   color: white;
   width: 470px;
  float: right;
@@ -100,7 +101,8 @@ a {
     color: white;
 }
 
-.footer {
+.footer  {
   text-align: center;
   border-top: 4px solid #f7931b;
+  margin-top: 150px ;
 }
