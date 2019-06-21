@@ -37,12 +37,8 @@ $(document).ready(function () {
         var currentTimeString = currentTime;
         $("#clock").html(currentTimeString);
 
-
-
     }
     updateClock();
-
-
 
     // ***              Tez code here        ***
     // CryptoControl API
@@ -147,7 +143,7 @@ $(document).ready(function () {
             coins = ""
         }
 
-        if (coins === ""){
+        if (coins === "") {
             coins = usersInput
         }
 
@@ -160,10 +156,7 @@ $(document).ready(function () {
     }
 
 
-
     // ***              Marlon code here            ***
-    // CryptoGeckoAPI Call
-
     // Global variables:
 
     var coinName;
@@ -174,9 +167,7 @@ $(document).ready(function () {
 
     var coinGeckoApiKey = "";
 
-    // function usersPricing () {
-
-
+    // CoinGecko API call
     function callCoinGecko(usersInput) {
         var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/" + usersInput;
 
@@ -204,69 +195,13 @@ $(document).ready(function () {
             console.log("Market Cap: -- $" + marketCap.toLocaleString('en'));
 
             // addPriceData();
-
-
-
-            var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>" + marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice + "</td></tr>"));
-
-
-
+            var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>" + '$' + marketCap.toLocaleString('en') + "</td><td>" + '$' + currentPrice + "</td><td>" + '$' + highPrice + "</td><td>" + '$' + lowPrice + "</td></tr>"));
             $("#cryptoBox").append(newRow);
-
         });
     }
-
     // Appends Price Data to table
     function addPriceData(usersCoin) {
         usersInput = $("#userInput").val().toLowerCase();
         callCoinGecko(usersInput)
-
-
     }
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
