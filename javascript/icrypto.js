@@ -11,7 +11,6 @@ $(document).ready(function () {
     }
 
 
-
     console.log("Group Project 1 \n Jon Palmer \n Lazontez Gardner \n Marlon Umeadi");
 
     setInterval(updateClock, 1000);
@@ -42,33 +41,6 @@ $(document).ready(function () {
 
     }
     updateClock();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -174,34 +146,18 @@ $(document).ready(function () {
         if (coins === null) {
             coins = ""
         }
-        coins = coins + "," + usersInput
+
+        if (coins === ""){
+            coins = usersInput
+        }
+
+        else {
+            coins = coins + "," + usersInput
+
+        }
         // Save data to the current local store
         localStorage.setItem("usersCoins", coins);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -216,23 +172,13 @@ $(document).ready(function () {
     var lowPrice;
     var marketCap;
 
-
-
-
     var coinGeckoApiKey = "";
-
 
     // function usersPricing () {
 
 
     function callCoinGecko(usersInput) {
         var coinGeckoUrl = "https://api.coingecko.com/api/v3/coins/" + usersInput;
-        // var newRow =$("<tr>").append(
-        //     $("<td>").text("Coin Name"),
-        //     $("<td>").text("Market Cap"),
-        //     $("<td>").text("Coin Price"),
-        //     $("<td>").text("24-hr High"),
-        //     $("<td>").text("24-hr Low")
 
         $.ajax({
             url: coinGeckoUrl,
@@ -261,22 +207,9 @@ $(document).ready(function () {
 
 
 
-
-
             var newRow = $(("<tr class = 'tableRow'><td>" + coinName + "</td><td>" + marketCap.toLocaleString('en') + "</td><td>" + currentPrice + "</td><td>" + highPrice + "</td><td>" + lowPrice + "</td></tr>"));
 
 
-
-            // var prices = $("<tr>")    
-
-            // prices.attr("class","list-group-item bg-dark")
-            // prices.text(currentPrice)
-            // var head = $("<thead>")
-            // $("#cryptoBox").prepend(head)
-            // head.append(prices)
-            // var th = $("<th>")
-            // th.attr("scope", "col")
-            // th.text("Current Price")
 
             $("#cryptoBox").append(newRow);
 

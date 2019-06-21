@@ -12,6 +12,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/e5583072dc.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Prompt:400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="images/1560927143.ico">
   <link rel="stylesheet" href="./css/style.css">
   <title>iCrypto</title>
 
@@ -19,95 +22,96 @@
 
 </head>
 
+<body>
 
 
-<div class="container">
+  <nav class="navbar fixed-top navbar-dark" style="background-color: 
+    #121111;">
+    <span class="navbar-brand mb-0 h1"><img src="images/btc.jpg" width="20" height="20" class="d-inline-block align-top"
+        alt="btc"> <a href="index.html">iCrypto</a></span>
+  </nav>
+  <div class="container">
 
-  <div class="row">
-
-    <div class="col col-12">
+    <div class="row">
       <div class="col col-12">
-        <div id="clock"></div>
-      </div>
-      <div style="text-align:center" class="jumbotron jumbotron-fluid">
-
-        <div class="container">
-          <div class="row">
-
+        <div style="text-align:center" class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">iCrypto Currency Tracker</h1>
+            <p class="lead">Track Only The Crypto Currencies That YOU Want!</p>
           </div>
-          <h1 class="display-4">iCrypto Currency Tracker</h1>
-          <p class="lead">Track Only The Crypto Currencies That YOU Want!</p>
+          <div id="clock"></div>
         </div>
-
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-4"></div>
-  <div class="col col-4">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button class="btn btn-danger" type="button" id="button-addon1">Search</button>
-      </div>
-      <input id="userInput" type="text" class="form-control" placeholder="Enter Crypto Here"
-        aria-label="Example text with button addon" aria-describedby="button-addon1">
-      <div id="errorBox"></div>
-    </div>
-  </div>
-
-</div>
-<div class="container">
   <div class="row">
-    <div class="col-lg-6">
-      <div id="box1">
-        <!-- <img src="..." class="card-img" alt="..."> -->
-        <div class="card-img-overlay">
-          <h5 class="card-title">Crypto Coins</h5>
-          <hr>
-          <div>
-            <div id="overflow">
+    <div class="col-4"></div>
+    <div class="col col-4">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-custom" type="button" id="button-addon1">Search</button>
+        </div>
+        <input id="userInput" type="text" class="form-control" placeholder="Enter Crypto Here"
+          aria-label="Example text with button addon" aria-describedby="button-addon1">
+      </div>
+      <div id="errorBox"></div>
 
-              <table class="table table-striped table-dark">
-                <thead class="thead-default">
-                  <tr>
-                    <th scope="col">Coin Name</th>
-                    <th scope="col">Market Cap</th>
-                    <th scope="col">Coin Price</th>
-                    <th scope="col">24-hr High</th>
-                    <th scope="col">24-hr Low</th>
-                  </tr>
-                </thead>
-                <tbody id="cryptoBox"></tbody>
+    </div>
 
-              </table>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="box1">
+          <!-- <img src="..." class="card-img" alt="..."> -->
+          <div class="card-img-overlay">
+            <h5 class="card-title">Crypto Coins</h5>
+            <hr>
+            <div>
+              <div id="overflow">
 
-              </table>
+                <table class="table table-striped table-dark rounded">
+                  <thead class="thead-default">
+                    <tr>
+                      <th scope="col">Coin Name</th>
+                      <th scope="col">Market Cap <a
+                          href="https://www.investopedia.com/investing/market-capitalization-defined/"
+                          target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></th>
+                      <th scope="col">Current Price</th>
+                      <th scope="col">24-hr High</th>
+                      <th scope="col">24-hr Low</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cryptoBox"></tbody>
+
+                </table>
+
+                </table>
+              </div>
             </div>
           </div>
         </div>
+
+
       </div>
+      <div class="col-lg-6">
+        <div id="box2">
+          <!-- <img src="..." class="card-img" alt="..."> -->
+          <div class="card-img-overlay">
+            <h5 class="card-title">Crypto Currency News</h5>
+            <hr>
+            <div>
+              <div id="overflow">
+                <table id="newsBox">
 
-
-    </div>
-    <div class="col-lg-6">
-      <div id="box2">
-        <!-- <img src="..." class="card-img" alt="..."> -->
-        <div class="card-img-overlay">
-          <h5 class="card-title">Crypto Currency News</h5>
-          <hr>
-          <div>
-            <div id="overflow">
-              <table id="newsBox">
-
-              </table>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
 
@@ -115,9 +119,13 @@
 
 
 
+  <footer class="footer mt-4 bg-dark py-1">
+    <div class="container">
+      <span class="text-muted">LMJ Development | &copy; 2019</span>
+    </div>
+  </footer>
 
-
-<script src="javascript/icrypto.js"></script>
+  <script src="javascript/icrypto.js"></script>
 </body>
 
 </html>
