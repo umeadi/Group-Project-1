@@ -1,11 +1,24 @@
 body {
-  background-image: url("../images/bitcoin-1813503_1920.jpg");
+  background-image: linear-gradient( rgba(0, 0, 0, .70), rgba(0, 0, 0, 0.5) ),url("../images/bitcoin-1813503_1920.jpg");
+  /* background-color: black; */
   margin-top: 20px;
   position: relative;
+  font-family: 'Prompt', sans-serif;
+}
+
+.navbar {
+  padding-bottom: .1rem;
+}
+
+.btn-custom {
+  background-color: #f7931b;
 }
 
 .jumbotron-fluid {
-  background-image: url("../images/1_v_aIMijXD5Ow6JG5uOBRnQ.jpeg");
+  background-image: url("../images/bitcoinbanner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 1rem;
 }
 
 .lead {
@@ -17,7 +30,13 @@ body {
 
 h1,
 p {
-  color: darkgray;
+  color: white;
+  
+}
+
+h1 { 
+  color: white;
+  font-weight: bold;
 }
 
 #box1 {
@@ -77,4 +96,9 @@ hr {
 
 a {
     color: white;
+}
+
+.footer {
+  text-align: center;
+  border-top: 4px solid #f7931b;
 }
