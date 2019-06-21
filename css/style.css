@@ -8,11 +8,32 @@ body {
 
 .navbar {
   padding-bottom: .1rem;
+  border-bottom: 4px solid #f7931b;
 }
 
 .btn-custom {
   background-color: #f7931b;
 }
+
+.btn-custom:hover {
+  text-decoration:none;
+  background: #B16912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #B16912 0%, #B16912 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#B16912), color-stop(100%,#B16912)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #B16912 0%,#B16912 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #B16912 0%,#B16912 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #B16912 100%, #B16912 100%); /* IE10+ */
+  background: linear-gradient(top,  #B16912 0%,#B16912 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc025', endColorstr='#8dc025',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-custom:active {
+    -webkit-box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
 
 .jumbotron-fluid {
   background-image: url("../images/bitcoinbanner.png");
@@ -51,6 +72,11 @@ h1 {
 th {
   font-size: 13px;
   background-color: #000000;
+  position: sticky; top: 0;
+}
+
+td {
+  font-size: 15px;
 }
 
 #overflow {
@@ -105,4 +131,5 @@ a {
   text-align: center;
   border-top: 4px solid #f7931b;
   margin-top: 150px ;
+  background-color: #121111;
 }
