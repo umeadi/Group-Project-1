@@ -23,6 +23,7 @@ A computer and web browser with an active internet connection.
 
 * [Bootstrap](https://getbootstrap.com/) - Styling library
 * [jQuery](https://jquery.com/) - JavaScript library
+* [Moment.js](https://momentjs.com/) - JavaScript library used to create clock
 * [CryptoControl](https://cryptocontrol.io/en/developers/apis) - API used to retrieve crypto news stories
 * [CoinGecko](https://www.coingecko.com/en/api) - API used to retrieve crypto price data
 * [FontAwesome](https://fontawesome.com/?from=io) - Online repository of visual elements
@@ -30,12 +31,10 @@ A computer and web browser with an active internet connection.
 
 ## Authors
 
-* LMJ Development ⓒ *
+* LMJ Development ⓒ 
 
 * **Lazontez Gardner** - *API calls and JavaScript* - (https://github.com/Lazontez)
 * **Jon Palmer** - *Bootstrap and HTML* - (https://github.com/JPalmer76)
 * **Marlon Umeadi** - *API calls and JavaScript* - (https://github.com/Umeadi)
 
-
-
-* Shout out to LMJ Development ⓒ for making this a pleasure!
+:shipit: Shout out to LMJ Development ⓒ for making this a pleasure!
